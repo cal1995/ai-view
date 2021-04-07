@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-04-07 10:25:24
- * @LastEditTime: 2021-04-07 11:40:08
+ * @LastEditTime: 2021-04-07 16:19:34
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \alunchen\vue-component\src\components\HelloWorld.vue
@@ -10,7 +10,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <p>
-      For a guide and recipes on how to configure / customize this project,123<br>
+      For a guide and recipes on how to configure / customize this project,<br>
       check out the
       <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
     </p>
