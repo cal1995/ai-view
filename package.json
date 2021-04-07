@@ -1,14 +1,20 @@
 {
-  "name": "vue-component",
-  "version": "0.1.0",
-  "private": true,
+  "name": "alunchen-view",
+  "version": "1.0.3",
+  "private": false,
+  "main": "lib/aiView.umd.min.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "lib": "vue-cli-service build --target lib --name aiView --dest lib src/index.js"
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "less-loader": "^5.0.0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^2.0.0",
     "vue": "^2.6.11"
   },
   "devDependencies": {

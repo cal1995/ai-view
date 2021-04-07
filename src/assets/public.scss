@@ -1,0 +1,39 @@
+@charset "utf-8";
+/* ============================================================
+   样式重置
+   ============================================================ */
+body,p,ul,ol,li,dl,dt,dd,h1,h2,h3,form,label,input,select,textarea,button,th,td,fieldset,section{margin:0;padding:0;}
+h1,h2,h3,h4,h5,h6,input,textarea,select,button,label{font-size:100%;vertical-align:middle;font-weight:normal;margin:0;padding:0;}
+ul,dl,ol{list-style:none;}
+img,fieldset,input{border:0 none;outline:0 none}
+img{display:inline-block;overflow:hidden;vertical-align:top;}
+body{-webkit-user-select:none;-webkit-text-size-adjust:none;}
+a,a:visited{outline:0 none;text-decoration:none;color:#576B95;cursor:pointer;-webkit-touch-callout:none;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);}
+input,textarea,select{-webkit-appearance:none;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);}
+table{border-collapse:collapse;border-spacing:0;}
+button{cursor:pointer;border:0 none;}
+select{border:0 none;}
+select::-ms-expand{display:none;}
+::-ms-check {display:none;}
+::-webkit-inner-spin-button {-webkit-appearance:none;}
+::-webkit-outer-spin-button {-webkit-appearance:none;}
+::-webkit-input-placeholder {color: #B2B2B2;}
+textarea{word-wrap:break-word;resize:none;}  /* word-wrap for opera, resize for webkit */
+option{padding-left:0;}
+article,aside,dialog,figure,footer,header,hgroup,nav,section{display:block;}
+
+/*字体*/
+
+
+body, html{
+  background: #ffffff;
+  font-family: PingFangSC-Regular;
+  /*height: 100%;*/
+}
+
+/*placeholder样式*/
+input::-webkit-input-placeholder{color:rgba(0,0,0,.2);}
+input::-moz-placeholder{color:rgba(0,0,0,.2);}
+input:-moz-placeholder{color:rgba(0,0,0,.2);}
+input:-ms-input-placeholder{color:rgba(0,0,0,.2);}
+textarea::-webkit-input-placeholder{color:rgba(0,0,0,.2);}
