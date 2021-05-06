@@ -6,14 +6,14 @@
  * @Description: In User Settings Edit
  * @FilePath: \alunchen\vue-component\src\main.js
  */
-import Vue from 'vue'
-import App from './App.vue'
+import Vue from 'vue';
+import App from './App.vue';
 
-import HelloWorld from '@/components/helloworld'
+import HelloWorld from '@/components/helloworld';
 
-Vue.config.productionTip = false
-Vue.use(HelloWorld)
+Vue.config.productionTip = false;
+Vue.use(HelloWorld);
 
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+    render: h => h(App)
+}).$mount('#app');

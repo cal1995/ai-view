@@ -1,25 +1,20 @@
-<!--
- * @Author: your name
- * @Date: 2021-04-07 10:25:24
- * @LastEditTime: 2021-04-07 11:11:19
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \alunchen\vue-component\src\App.vue
--->
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+	<div id="app">
+		<img
+		alt="Vue logo"
+		src="./assets/logo.png"
+		/>
+		<HelloWorld msg="Welcome to Your Vue.js App"></HelloWorld>
+	</div>
 </template>
 
 <script>
 
 export default {
-  name: 'App',
-  components: {
-  }
-}
+    name: 'App',
+    components: {
+    }
+};
 </script>
 
 <style lang="scss">

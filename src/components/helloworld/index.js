@@ -6,10 +6,10 @@
  * @Description: In User Settings Edit
  * @FilePath: \alunchen\vue-component\src\components\helloworld\index.js
  */
-import HelloWorld from './HelloWorld'
+import HelloWorld from './HelloWorld';
 
 HelloWorld.install = (Vue) => {
-    Vue.component(HelloWorld.name, HelloWorld)
-}
+    Vue.component(HelloWorld.name, HelloWorld);
+};
 
-export default HelloWorld
+export default HelloWorld;
