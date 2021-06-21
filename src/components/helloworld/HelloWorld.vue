@@ -108,13 +108,13 @@
 
 <script>
 export default {
-    name: 'HelloWorld',
-    props: {
-        msg: {
-            type: String,
-            default: ''
-        }
+  name: 'HelloWorld',
+  props: {
+    msg: {
+      type: String,
+      default: ''
     }
+  }
 };
 </script>
 
