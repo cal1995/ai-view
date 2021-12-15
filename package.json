@@ -15,7 +15,8 @@
     "node-sass": "^4.12.0",
     "sass-loader": "^8.0.2",
     "style-loader": "^2.0.0",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "vue-router": "^3.5.3"
   },
   "devDependencies": {
     "@tencent/eslint-config-tencent": "^0.13.0",
