@@ -1,9 +1,5 @@
 <template>
 	<div class="wrapper">
-		<img
-		alt="Vue logo"
-		src="@/assets/logo.png"
-		/>
 		<select-input></select-input>
 	</div>
 </template>

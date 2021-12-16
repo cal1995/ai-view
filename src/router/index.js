@@ -5,8 +5,16 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
+    path: '/select-input',
     component: () => import('@/views/test')
+  },
+  {
+    path: '/iview-table-columns-sort',
+    component: () => import('@/views/test2')
+  },
+  {
+    path: '/iview-text-edit',
+    component: () => import('@/views/test3')
   }
 ];
 

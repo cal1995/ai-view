@@ -29,6 +29,7 @@
 					:src="`https://dayu.oa.com/avatars/${item.Name.split('(')[0]}/profile.jpg`"
 					class="chooser__popper__avatars"
 					/>
+					<!-- eslint-disable-next-line -->
 					<span v-html="item.colorName"></span>
 				</li>
 			</ul>
@@ -253,9 +254,11 @@ export default {
       this.coreInput(event, value);
     },
     getUser() {
+      // eslint-disable-next-line
       const promise = new Promise((resolve, rejects) => {
         try {
           const params = this.objectToQuerystring(this.form);
+          // eslint-disable-next-line
           jsonp(`https://hrc.oa.com/v1.1/pages/chooser/data/${this.type}.aspx?${params}`, { timeout: 5000 }, (err, data) => {
             if (err) {
               rejects(err.message);
