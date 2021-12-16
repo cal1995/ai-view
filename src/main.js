@@ -10,6 +10,9 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 
+// plugins
+import './plugins/iview.js';
+
 import HelloWorld from '@/components/helloworld';
 import SelectInput from '@/components/selectinput';
 
