@@ -15,6 +15,10 @@ const routes = [
   {
     path: '/iview-text-edit',
     component: () => import('@/views/test3')
+  },
+  {
+    path: '/iview-table-edit',
+    component: () => import('@/views/test4')
   }
 ];
 
