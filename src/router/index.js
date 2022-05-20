@@ -19,6 +19,10 @@ const routes = [
   {
     path: '/iview-table-edit',
     component: () => import('@/views/test4')
+  },
+  {
+    path: '/flex-grid',
+    component: () => import('@/views/test5')
   }
 ];
 

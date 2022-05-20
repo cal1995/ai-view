@@ -101,6 +101,7 @@
 				target="_blank"
 				rel="noopener"
 				>awesome-vue</a>
+				aaaaaaaaaaaaaaaaaaaaaaaaaaa
 			</li>
 		</ul>
 	</div>
@@ -114,6 +115,9 @@ export default {
       type: String,
       default: ''
     }
+  },
+  created() {
+    console.log('12312313');
   }
 };
 </script>

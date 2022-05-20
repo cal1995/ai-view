@@ -16,7 +16,7 @@ const install = (Vue) => {
     install(window.Vue);
   }
 };
-
+console.log('test');
 export default {
   // 导出的对象必须具有 install，才能被 Vue.use() 方法安装
   install,
