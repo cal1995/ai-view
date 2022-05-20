@@ -30,29 +30,34 @@ export default {
         },
         {
           title: 'Address',
-          key: 'address'
+          key: 'address',
+          className: 'edit-cell'
         }
       ],
       data1: [
         {
+          id: '1',
           name: 'John Brown',
           age: 18,
           address: 'New York No. 1 Lake Park',
           date: '2016-10-03'
         },
         {
+          id: '2',
           name: 'Jim Green',
           age: 24,
           address: 'London No. 1 Lake Park',
           date: '2016-10-01'
         },
         {
+          id: '3',
           name: 'Joe Black',
           age: 30,
           address: 'Sydney No. 1 Lake Park',
           date: '2016-10-02'
         },
         {
+          id: '4',
           name: 'Jon Snow',
           age: 26,
           address: 'Ottawa No. 2 Lake Park',
@@ -68,10 +73,10 @@ export default {
   methods: {
     handlerDom(event) {
       let el = event.target;
-      let { nodeName } = el;
-      while (nodeName !== 'TD') {
+      let name;
+      while (name !== 'TD') {
         el = el.parentNode;
-        nodeName = el.nodeName;
+        name = el.nodeName;
       }
       return el;
     },
@@ -85,7 +90,7 @@ export default {
         row, column, data, event
       };
     },
-    cellInfoHandler(tableData, row, column, dom) {
+    cellInfoHandler(row, column, dom) {
       const div = dom.querySelector('div');
       if (dom.className.indexOf('edit-cell') < 0 ||
           div.innerHTML.indexOf('modifying') > -1 ||
@@ -97,13 +102,15 @@ export default {
       const property = column.key;
       const oldVal = row[property];
       const ocell = this.originCell;
-      ocell.index = tableData.findIndex(item => item.id === row.id);
+      ocell.index = this.data1.findIndex(item => item.id === row.id);
       ocell.copyRow = deepClone(row);
       ocell.originContent = deepClone(div.innerHTML);
+      console.log(ocell.originContent);
       ocell.oldVal = oldVal;
       ocell.el = div;
       ocell.property = property;
       div.innerHTML = '';
+      console.log(div);
       this.clickEvt = this.bindOutSideEvt();
       const vm = handler.input({
         el: div,
@@ -141,15 +148,20 @@ export default {
     undoCellDBClick() {
       this.modifying = false;
       this.clickEvt.off();
+      const { data1 } = this;
       const ocell = this.originCell;
-      const { oldVal, copyRow, property, el, originContent } = ocell;
+      const { oldVal, copyRow, property, el, originContent, index } = ocell;
+      console.log(originContent);
       const newVal = copyRow[property];
       if (oldVal === newVal || newVal === '') {
         el.innerHTML = originContent;
       } else {
         // const reg = new RegExp(`${oldVal}(?=\\s<i)`);
         // el.innerHTML = originContent.replace(reg, newVal);
-        el.innerHTML = newVal;
+        data1[index][property] = newVal;
+        const reg = new RegExp(`${oldVal}(?=<\\/span>)`);
+        console.log(reg);
+        el.innerHTML = originContent.replace(reg, newVal);
       }
     },
     bindOutSideEvt() {

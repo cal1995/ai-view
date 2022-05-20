@@ -34,7 +34,8 @@ const inputRender = (options) => {
         },
         class: 'modifying',
         style: {
-          width: '72px'
+          // width: '72px'
+          width: '200px'
         },
         on: {
           input (val) {
