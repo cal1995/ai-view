@@ -23,6 +23,10 @@ const routes = [
   {
     path: '/flex-grid',
     component: () => import('@/views/test5')
+  },
+  {
+    path: '/iview-form',
+    component: () => import('@/views/test6')
   }
 ];
 
