@@ -96,9 +96,9 @@ export default {
       this.formValidate.forEach((item, index) => {
         const form = `formValidate${index}`;
         this.$refs[form][0].validate((valid) => {
-          console.log(valid)
-        })
-      })
+          console.log(valid);
+        });
+      });
     },
     // handleSubmit() {
     //   console.log(this.$refs);
