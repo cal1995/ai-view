@@ -27,6 +27,10 @@ const routes = [
   {
     path: '/iview-form',
     component: () => import('@/views/test6')
+  },
+  {
+    path: '/textarea-tooltips',
+    component: () => import('@/views/test7')
   }
 ];
 
