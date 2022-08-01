@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div style="height: 2000px">
 		<div style="width: 520px; margin: 0 auto">
 			<Input
 			type="textarea"
@@ -18,6 +18,7 @@
 			clearable
 			></Input>
 			<div
+			id="dorpdown-wrapper"
 			class="select-dropdown innerbox"
 			v-show="showSelectDropdown"
 			>
@@ -30,7 +31,7 @@
 					>
 						<span
 						v-for="(item, index) in row.wordMap"
-						:class="['keyword', row.wordStr.indexOf(`${index}`) > -1 ? 'active-keyWord' : '']"
+						:class="['keyword', row.keywordMap.indexOf(`${index}`) > -1 ? 'active-keyWord' : '']"
 						:key="index"
 						>{{ item.word }}</span>
 					</li>
@@ -73,6 +74,22 @@ export default {
         {
           name: 'Canberra',
           id: 'Canberra'
+        },
+        {
+          name: 'Canada',
+          id: 'Canada'
+        },
+        {
+          name: 'America',
+          id: 'America'
+        },
+        {
+          name: 'England',
+          id: 'England'
+        },
+        {
+          name: 'Beijing',
+          id: 'Beijing'
         }
       ],
       dropdownList: [],
@@ -115,13 +132,19 @@ export default {
       if ((keyCode === 38 || keyCode === 40) && this.showSelectDropdown) {
         e.preventDefault();
         const { length } = this.dropdownList;
+        const dom = document.getElementById('dorpdown-wrapper');
         if (keyCode === 40 && this.selectIndex < length - 1) {
           this.selectIndex += 1;
+          if (this.selectIndex >= 3) {
+            dom.scrollTop += 32;
+          }
         }
         if (keyCode === 38 && this.selectIndex > 0) {
           this.selectIndex -= 1;
+          dom.scrollTop -= 32;
         }
       }
+      // backspace
       if (keyCode === 8) {
         const { length } = this.keyWord;
         this.keyWord = this.keyWord.substring(0, length - 1);
@@ -130,6 +153,10 @@ export default {
         } else {
           this.filterText('');
         }
+      }
+      // space
+      if (keyCode === 32) {
+        this.resetTootips();
       }
     },
     onKeyup(event) {
@@ -176,14 +203,16 @@ export default {
       this.dropdownList = list.filter(row => reg.test(row.name)).map((row) => {
         const { name } = row;
         const arr = reg.exec(name);
-        const startIndex = arr.index;
-        let wordStr = '';
+        let startIndex = arr.index;
+        const keywordMap = [];
         arr.forEach((item, i) => {
           if (i > 0) {
-            wordStr = `${wordStr}${name.indexOf(item, startIndex)},`;
+            const index = name.indexOf(item, startIndex);
+            keywordMap.push(`${index}`);
+            startIndex = index + 1;
           }
         });
-        return Object.assign(row, { wordStr });
+        return Object.assign(row, { keywordMap });
       });
       if (this.dropdownList.length === 0) {
         this.resetTootips();
@@ -228,7 +257,7 @@ export default {
       this.$nextTick(() => {
         const dom = document.getElementById('textarea-box').querySelector('textarea');
         this.setCaretPosition(dom, `${matchedStr}${row.name}`.length);
-      })
+      });
 
       // this.setCaretPosition(dom, 0);
       // this.$refs.textarea.focus();
